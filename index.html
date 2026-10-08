@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maze Runner 2.0</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0a0a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Courier New', monospace;
+  color: #0f0;
+  overflow: hidden;
+}
+#gameCanvas {
+  border: 2px solid #0f0;
+  image-rendering: pixelated;
+}
+#ui {
+  margin-top: 10px;
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+}
+#controls {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #0a0;
+}
+#minimap {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid #0f0;
+  image-rendering: pixelated;
+  background: #0a0a1a;
+}
+#message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #ff0;
+  display: none;
+  text-shadow: 0 0 10px #ff0;
+}
+</style>
+</head>
+<body>
+<canvas id="gameCanvas"></canvas>
+<canvas id="minimap"></canvas>
+<div id="message"></div>
+<div id="ui">
+  <span>Level: <span id="level">1</span></span>
+  <span>Time: <span id="time">0</span>s</span>
+  <span>Deaths: <span id="deaths">0</span></span>
+</div>
+<div id="controls">Arrow keys / WASD to move. Reach the exit (green square) to advance.</div>
+<script src="src/game.js"></script>
+</body>
+</html>
